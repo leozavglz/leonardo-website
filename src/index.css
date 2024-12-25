@@ -1,0 +1,257 @@
+/* Importar la fuente Space Grotesk que parece ser la que usa el sitio */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 3px solid #000;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.navbar h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #000;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: opacity 0.2s ease;
+    letter-spacing: -0.01em;
+}
+
+.navbar a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: black;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #000;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 1001;
+    }
+
+    .navbar-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        transition: right 0.3s ease;
+    }
+
+    .navbar-links.active {
+        right: 0;
+    }
+
+    .navbar-left {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* Hamburger animation when active */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .navbar h1 {
+        font-size: 1.1rem;
+    }
+
+    .navbar-links a {
+        font-size: 1.1rem;
+    }
+}
+
+.carrusel-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.carrusel-slide {
+  padding: 0;
+  width: 100%;
+  height: 95vh; /* Ajusta esto según tus necesidades */
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 5px solid black;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Ocultar los dots si no los necesitas */
+.slick-dots {
+  display: none !important;
+}
+
+/* Ajustar los botones de navegación */
+.slick-prev,
+.slick-next {
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 10px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 40px;
+  color: #000;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .carrusel-container {
+      width: 80vw;
+      margin: 0;
+  }
+
+  .image-wrapper {
+      border-width: 3px;
+  }
+
+  .carrusel-slide {
+      height: 50vh; /* Ajusta la altura para móviles */
+  }
+}
+
+/* Eliminar cualquier padding o margin adicional */
+.slick-slider {
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list {
+  margin: 0;
+  padding: 0 !important;
+}
+
+.slick-track {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.card {
+    width: 80%;
+    max-width: 390px;
+    margin: 3rem auto;
+    padding: 2%;
+    border: 5px solid black;
+    background-color: white;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.card .image-wrapper {
+    width: 100%;
+    height: auto;
+    border: 5px solid black; 
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.card-content p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+}
